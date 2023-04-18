@@ -188,7 +188,7 @@ class Vote(db.Model):
 ################################################################################
 
 
-def connect_to_db(app, db_uri='postgresql:///quippro'):
+def connect_to_db(app, db_uri='postgresql://postgres:postgres@db/quippro'):
 	"""Connect app to database."""
 
 	app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
@@ -405,7 +405,9 @@ if __name__ == '__main__':
 
 	connect_to_db(app)
 	if sys.argv[-1] == 'rebuild':
-		db.create_all()
+		with app.app_context():
+			db.create_all()
 	elif sys.argv[-1] == 'seed':
-		db.create_all()
+		with app.app_context():
+			db.create_all()
 		example_data()

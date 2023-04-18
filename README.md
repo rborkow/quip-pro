@@ -67,7 +67,7 @@ $ python server/model.py rebuild
 ```
 $ npm run build
 ```
-7. Launch the server and connect to localhost:5000 in your browser:
+7. Launch the server and connect to localhost:5050 in your browser:
 ```
 $ python server/server.py
 ```

@@ -6,18 +6,18 @@ const config = {
   	path: __dirname + '/static/dist',
   	filename: 'bundle.js',
   },
-  resolve: {
-  	extensions: ['.js', '.jsx', '.css']
-  },
   module: {
     rules: [
       {
-        test: /\.jsx?/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
-      }
-    ]
-  }
+        use: ["babel-loader"],
+      },
+    ],
+  },
+  resolve: {
+  	extensions: ['.js', '.jsx', '.css']
+  },
 };
 
 module.exports = config;

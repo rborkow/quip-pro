@@ -28,7 +28,7 @@ const rootReducer = combineReducers({
 	gameState: GameStateReducer
 })
 
-let socket = io('http://localhost:5000');
+let socket = io('http://localhost:5050');
 let SocketIoMiddleware = createSocketIoMiddleware(socket, 'server/');
 let store = applyMiddleware(SocketIoMiddleware)(createStore)(rootReducer);
 
